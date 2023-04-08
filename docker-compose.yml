@@ -1,0 +1,22 @@
+version: "3.3" # version del yml
+
+services: # servicios a los que me puedo conectar
+  postgres:
+    image: postgres:13 # una imagen de postgres version 13
+    environment:
+      - POSTGRES_DB=my_expenses
+      - POSTGRES_USER=arturo
+      - POSTGRES_PASSWORD=admin123
+    ports:
+      - 5432:5432
+    volumes:
+      - ./postgres_data:/var/lib/postgresql/data
+
+  pgadmin:
+    image: dpage/pgadmin4
+    environment:
+    - PGADMIN_DEFAULT_EMAIL=admin@mail.com
+    - PGADMIN_DEFAULT_PASSWORD=root
+    ports:
+    - 5050:80
+
