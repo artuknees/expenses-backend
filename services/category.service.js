@@ -6,18 +6,18 @@ const { models } = require('../libs/sequelize');
 // const pool = require('../libs/postgres.pool.js');
 // const sequelize = require('../libs/sequelize')
 
-class ProductService {
+class CategoryService {
 
   constructor() {
   }
 
   async create(data) {
-    const newProduct = await models.Product.create(data);
-    return newProduct;
+    const newCategory = await models.Category.create(data);
+    return newCategory;
   }
 
   async find() {
-    const rta = await models.Product.findAll();
+    const rta = await models.Category.findAll();
     return rta;
   }
 
@@ -56,4 +56,4 @@ class ProductService {
 
 }
 
-module.exports = ProductService;
+module.exports = CategoryService;
