@@ -2,10 +2,6 @@
 // const boom = require('@hapi/boom');
 const { models } = require('../libs/sequelize');
 
-// saco pool al aplicar sequelize
-// const pool = require('../libs/postgres.pool.js');
-// const sequelize = require('../libs/sequelize')
-
 class ExpenseService {
 
   constructor() {
@@ -17,12 +13,8 @@ class ExpenseService {
   }
 
   async find() {
-    // const options = {
-    //   include: ['category'],
-    //   where:{}
-    // };
     const rta = await models.Expense.findAll();
-    // const rta = await models.Expense.findAll(options);
+    // const rta = await models.Expense.findAll({include: ['category']});
     return rta;
   }
 

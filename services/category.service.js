@@ -17,6 +17,7 @@ class CategoryService {
   }
 
   async find() {
+    // const rta = await models.Category.findAll({include: ['expense']});
     const rta = await models.Category.findAll();
     return rta;
   }

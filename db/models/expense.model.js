@@ -1,7 +1,5 @@
 const { Model , DataTypes , Sequelize } = require('sequelize');
-
 const { CATEGORY_TABLE } = require('./category.model')
-
 const EXPENSE_TABLE = 'expenses';
 
 const ExpenseSchema = {
@@ -34,6 +32,7 @@ const ExpenseSchema = {
         field:'category_id',
         allowNull: false,
         type: DataTypes.INTEGER,
+        unique: true,
         references: {
             model: CATEGORY_TABLE,
             key: 'id',
